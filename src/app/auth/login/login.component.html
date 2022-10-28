@@ -1,0 +1,50 @@
+<div class="w-full h-full p-4">
+  <img
+    src="/assets/rocket.svg"
+    alt="avatar"
+    class="mx-auto h-28 w-28 bg-indigo-50 rounded-full"
+  />
+  <h1 class="text-xl font-semibold text-slate-700 text-center">
+    Lets fly to new heights
+  </h1>
+  <p class="text-md text-slate-700 text-center">Enter your credentials</p>
+  <div class="py-4">
+    <label for="name" class="text-slate-600 block text-sm">Your email</label>
+    <input
+      type="name"
+      name="name"
+      (change)="changeName($event)"
+      [value]="details.username"
+      class="w-full p-2 outline-none border-2 rounded-md active:border-indigo-600 focus:border-indigo-600"
+      placeholder="username"
+      required
+    />
+    <div class="h-4"></div>
+    <label for="password" class="text-slate-600 block text-sm">Password</label>
+    <input
+      type="password"
+      name="password"
+      (change)="changePass($event)"
+      [value]="details.password"
+      class="w-full p-2 outline-none border-2 rounded-md active:border-indigo-600 focus:border-indigo-600"
+      placeholder="password"
+      required
+    />
+    <div class="w-full text-right py-2 text-indigo-600">
+      <a class="underline" routerLink="#">Forgot password</a>
+    </div>
+    <button
+    (click)="login()"
+      class="w-full uppercase bg-indigo-600 p-2 rounded-md active:ring-2 ring-offset-2 ring-indigo-600 font-bold transition-all duration-150 active:bg-indigo-800 text-white flex justify-center"
+    >
+      Sign in
+    </button>
+    <div class="border-b-2 w-full py-2"></div>
+    <p class="text-center text-slate-600">
+      Don't have an account?
+      <a routerLink="/auth/register" class="text-indigo-600 underline"
+        >sign up</a
+      >
+    </p>
+  </div>
+</div>

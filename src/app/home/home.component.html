@@ -1,0 +1,60 @@
+<main class="h-screen bg-slate-100 w-screen flex flex-col">
+  <header class="w-full bg-white shadow-md">
+    <div class="mx-auto flex items-center h-full max-w-7xl py-4">
+      <h2 class="flex text-2xl font-bold items-center gap-2 text-indigo-600">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-12 h-12 inline"
+        >
+          <path
+            d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z"
+          />
+        </svg>
+        KPDash
+      </h2>
+      <div class="flex-grow"></div>
+      <nav class="flex gap-4 text-indigo-700">
+        <a
+          class="p-2 cursor-pointer border-transparent border-b-2 hover:border-indigo-700"
+          routerLink="/home/dashboard"
+          routerLinkActive="border-indigo-700"
+          >Dashboard</a
+        >
+        <a
+          class="p-2 cursor-pointer border-transparent border-b-2 hover:border-indigo-700"
+          routerLink="/home/listview"
+          routerLinkActive="border-indigo-700"
+          >Listview</a
+        >
+      </nav>
+    </div>
+  </header>
+  <div class="flex-grow flex max-w-7xl w-full h-full overflow-auto mx-auto">
+    <div class="h-full border-r-2 mr-2 text-center max-w-xs w-96 p-4">
+      <img
+        src="/assets/avatar.svg"
+        alt="avatar"
+        class="w-56 mx-auto h-56 bg-indigo-100 rounded-full"
+      />
+      <h2 class="text-2xl font-bold text-slate-800">{{ details.name }}</h2>
+      <h3 class="text-lg text-slate-800 underline">{{ details.email }}</h3>
+      <div class="border-b-2 py-2"></div>
+      <p class="text-md text-slate-700">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, inventore
+        ea! Velit nemo, asperiores magni aliquid illum quos corporis hic atque,
+        eum ipsa harum cupiditate minus facilis, molestias pariatur quae.
+      </p>
+      <button
+        class="w-full my-4 uppercase bg-indigo-600 p-2 rounded-md active:ring-2 ring-offset-2 ring-indigo-600 font-bold transition-all duration-150 active:bg-indigo-800 text-white flex justify-center"
+        (click)="logout()"
+        >
+        Logout
+      </button>
+    </div>
+    <div class="flex-grow w-full h-full overflow-auto flex-col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
